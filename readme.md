@@ -2,6 +2,8 @@
 
 This is a simple web application built with Flask that allows you to convert YouTube videos to MP3 format.
 
+![Demo](./images/screenshot.png)
+
 ## Features
 
 - Convert YouTube videos to MP3 audio files.
