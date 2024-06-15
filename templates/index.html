@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube to MP3 Converter</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        function validateForm() {
+            const url = document.getElementById('url').value;
+            const pattern = /^(https?:\/\/)?(www\.)?(youtube|youtu|youtube-nocookie)\.(com|be)\/(watch\?v=|embed\/|v\/|.+\?v=)?([^&=%\?]{11})/;
+            if (!pattern.test(url)) {
+                alert("Please enter a valid YouTube URL.");
+                return false;
+            }
+            // return true to the home page
+            window.location.href = `/`;
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube to MP3 Converter</h1>
+        <form method="POST" action="/download" onsubmit="return validateForm()">
+            <label for="url">YouTube URL:</label>
+            <input type="text" id="url" name="url" placeholder="Enter YouTube URL" required>
+            <button type="submit">Download</button>
+        </form>
+    </div>
+</body>
+</html>
